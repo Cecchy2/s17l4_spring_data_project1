@@ -12,4 +12,7 @@ public interface ToppingRepository  extends JpaRepository<Topping,Long> {
     boolean existsByNome(String nome);
 
     Topping findByNome (String nome);
+
+    Topping findByNomeStartingWithIgnoreCase (String lettere);
+    
 }

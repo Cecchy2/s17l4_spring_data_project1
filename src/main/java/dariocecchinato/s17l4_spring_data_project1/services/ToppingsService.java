@@ -26,6 +26,10 @@ public class ToppingsService {
         return (Topping) toppingRepository.findByNome(name);
    }
 
+   public Topping findByNomeStartingWith (String lettere){
+        return toppingRepository.findByNomeStartingWithIgnoreCase(lettere);
+   }
+
 
 
 }

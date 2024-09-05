@@ -44,6 +44,8 @@ public class ToppingRunner implements CommandLineRunner {
             System.out.println(e.getMessage());
         }
 
+        System.out.println(toppingsService.findByNomeStartingWith("o"));
+
     }
 }
 
