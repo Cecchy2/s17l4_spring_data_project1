@@ -1,7 +1,6 @@
 package dariocecchinato.s17l4_spring_data_project1.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,8 +12,13 @@ import java.util.List;
 @Getter
 @Entity
 public class Pizza extends MenuData {
-    @OneToMany
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @ManyToMany
+    @JoinTable(name= "pizza_toppings")
 private List<Topping> toppings;
+
 
     public Pizza(List<Topping> toppings) {
         this.toppings = toppings;

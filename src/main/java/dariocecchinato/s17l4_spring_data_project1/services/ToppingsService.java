@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Slf4j
 @Service
 public class ToppingsService {
@@ -19,4 +21,11 @@ public class ToppingsService {
         toppingRepository.save(newTopping);
         log.info("Il topping " + newTopping.getNome() + " è stato salvato");
     }
+
+   public Topping findByName(String name){
+        return (Topping) toppingRepository.findByNome(name);
+   }
+
+
+
 }

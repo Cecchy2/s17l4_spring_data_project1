@@ -1,16 +1,16 @@
 package dariocecchinato.s17l4_spring_data_project1.runners;
 
-import dariocecchinato.s17l4_spring_data_project1.S17l4SpringDataProject1Application;
 import dariocecchinato.s17l4_spring_data_project1.entities.Topping;
 import dariocecchinato.s17l4_spring_data_project1.exceptions.SavingException;
 import dariocecchinato.s17l4_spring_data_project1.services.ToppingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Bean;
+
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
+@Order(1)
 public class ToppingRunner implements CommandLineRunner {
     @Autowired
     private ToppingsService toppingsService;
@@ -44,5 +44,6 @@ public class ToppingRunner implements CommandLineRunner {
             System.out.println(e.getMessage());
         }
 
-    }}
+    }
+}
 
